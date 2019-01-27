@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<h1>ABOUT</h1>
-  {{request.user}}
+<h1>{{ title | title  }}</h1>
 <p>ABOUT template</p>
+
+<p>
+  {{ my_html | safe }}
+</p>
+<!-- <ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul> -->
+<ul>
+  {% for my_sub_item in my_fav %}
+    {% if my_text == 'About me' %}
+      <li>{{cat}}</li>
+    {% endif %}
+  <li>{{ my_sub_item }}</li>
+  {% endfor %}
+</ul>
 {% endblock %}
